@@ -43,9 +43,9 @@ public class DevopsBase {
     options.addArguments("--disable-dev-shm-usage");
     options.addArguments("--no-sandbox");
 //    options.addArguments("--headless");
+//    options.setBinary("/usr/bin/chromium-browser");
         driver = new ChromeDriver(options);
 
-        driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
     }
