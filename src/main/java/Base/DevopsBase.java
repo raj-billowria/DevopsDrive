@@ -34,16 +34,10 @@ public class DevopsBase {
         }
 
         WebDriverManager.chromedriver().setup();
-        HashMap<String, Object> prefs = new HashMap<>();
-        prefs.put("download.prompt_for_download", false);
-        prefs.put("download.default_directory","/Users/nowfloats/Documents/Projects/Zadinga/Downloads");
-        prefs.put("plugins.always_open_pdf_externally", true);
+
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-        options.setExperimentalOption("prefs", prefs);
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-extensions");
-        options.addArguments("--disable-dev-shm-usage");
+        options.setExperimentalOption("useAutomationExtension", false);
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(ChromeOptions.CAPABILITY, options);
         options.merge(caps);
