@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -33,14 +34,9 @@ public class DevopsBase {
             e.printStackTrace();
         }
 
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-        options.setExperimentalOption("useAutomationExtension", false);
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability(ChromeOptions.CAPABILITY, options);
-        options.merge(caps);
-        driver = new ChromeDriver(options);
+        WebDriverManager.chromedriver().create();
+
+        driver = new ChromeDriver();
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
