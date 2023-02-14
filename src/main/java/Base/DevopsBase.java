@@ -34,7 +34,6 @@ public class DevopsBase {
         }
 
         WebDriverManager.chromedriver().setup();
-
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
         options.setExperimentalOption("useAutomationExtension", false);
@@ -46,7 +45,6 @@ public class DevopsBase {
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(50));
     }
 
     @AfterClass
