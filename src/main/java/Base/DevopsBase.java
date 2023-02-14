@@ -22,7 +22,7 @@ public class DevopsBase {
     public static WebDriverWait wait;
     public static Properties prop;
 
-    @BeforeClass
+@BeforeClass
     public void setup(){
 
         try {
