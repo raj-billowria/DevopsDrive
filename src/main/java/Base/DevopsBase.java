@@ -42,7 +42,7 @@ public class DevopsBase {
     options.addArguments("--disable-extensions");
     options.addArguments("--disable-dev-shm-usage");
     options.addArguments("--no-sandbox");
-//    options.addArguments("--headless");
+    options.addArguments("--headless");
 //    options.setBinary("/usr/bin/chromium-browser");
         driver = new ChromeDriver(options);
 
