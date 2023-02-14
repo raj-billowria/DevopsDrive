@@ -36,7 +36,9 @@ public class DevopsBase {
 
         WebDriverManager.chromedriver().create();
 
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
