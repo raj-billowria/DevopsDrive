@@ -3,9 +3,11 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/home/raj/IdeaProjects/DevopsDrive">
         <classes>
-            <class name="Test.Test_01_GoogleTitle">
+            <class name="Test.TestHello">
                 <methods>
-                    <include name="testGoogleTitle"/>
+                    <include name="Test_Hello"/>
+                    <include name="Test_Devops"/>
+                    <include name="Test_Raj"/>
                 </methods>
             </class>
         </classes>
